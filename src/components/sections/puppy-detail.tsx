@@ -16,6 +16,8 @@ interface Puppy {
   price: string;
   isChampion: boolean;
   isReserved?: boolean;
+  images: string[];
+  description: string[];   // ✅ add this line
   ownerReview: {
     name: string;
     date: string;
@@ -24,6 +26,7 @@ interface Puppy {
     image: string;
   };
 }
+
 
 const puppiesData: {[key: number]: Puppy;} = {
   1: {
