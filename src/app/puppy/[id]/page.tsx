@@ -15,8 +15,7 @@ export default async function PuppyPage({ params }: PuppyPageProps) {
       <FloatingPhone />
       <Header />
       <main>
-        <PuppyDetail puppyId={Number(id)} />
-
+        <PuppyDetail puppyId={id} />
       </main>
       <Footer />
     </div>

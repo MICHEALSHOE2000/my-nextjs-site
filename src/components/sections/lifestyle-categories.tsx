@@ -2,7 +2,8 @@
 
 import React, { useCallback, useEffect, useState } from 'react';
 import Image from 'next/image';
-import useEmblaCarousel, { EmblaCarouselType } from 'embla-carousel-react';
+import useEmblaCarousel from 'embla-carousel-react';
+import type { EmblaCarouselType } from 'embla-carousel';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 // Using a type for category data for better maintainability
@@ -69,9 +70,13 @@ export default function LifestyleCategories() {
   const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
 
   const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
-    setPrevBtnDisabled(!emblaApi.canScrollPrev());
-    setNextBtnDisabled(!emblaApi.canScrollNext());
+    setPrevBtnDisabled(!emblaApi.canScrollPrev());       
+    setNextBtnDisabled(!emblaApi.canScrollNext());       
   }, []);
+  
+  
+  
+  
 
   useEffect(() => {
     if (!emblaApi) return;
