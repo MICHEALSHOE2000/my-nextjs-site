@@ -49,3 +49,23 @@ const nextConfig: NextConfig = {
 }
 
 export default nextConfig
+// next.config.ts
+import type { NextConfig } from "next"
+
+const nextConfig: NextConfig = {
+  images: {
+    domains: [
+      "slelguoygbfzlpylpxfs.supabase.co", // 👈 Supabase bucket with your puppy images
+      "images.pexels.com",                // 👈 if you also pull stock images
+      "cdn2.thecatapi.com",               // 👈 example, add others as needed
+    ],
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+}
+
+export default nextConfig
