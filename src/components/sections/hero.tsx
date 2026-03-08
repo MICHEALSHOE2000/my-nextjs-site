@@ -4,33 +4,23 @@ import { Star, MessageCircle, ShieldCheck, Truck, BadgeCheck } from 'lucide-reac
 import { cn } from "@/lib/utils";
 import { createWhatsAppUrl, whatsappMessages } from "@/lib/whatsapp";
 
-const StarRating = ({ rating = 5, className }: { rating?: number; className?: string }) => {
-  return (
-    <div className={cn("flex items-center justify-center gap-1", className)}>
-      {Array.from({ length: rating }, (_, i) => (
-        <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400 drop-shadow-sm" />
-      ))}
-    </div>
-  );
-};
+const stats = [
+  { label: "Happy families", value: "220k+" },
+  { label: "Breeders screened", value: "1,000+" },
+  { label: "Avg support response", value: "<5 min" },
+];
 
 const HeroSection = () => {
   const whatsappUrl = createWhatsAppUrl(whatsappMessages.heroPrimary);
 
   return (
-    <div className="bg-gradient-to-b from-green-50/50 to-background pt-12 pb-16">
-      <div className="container mx-auto px-5">
-        <div className="text-sm text-muted-foreground mb-8 font-body">
-          <a href="https://www.puppyspot.com/" className="hover:text-primary transition-colors hover:underline">PuppySpot</a>
-          <span className="mx-2 text-gray-300">/</span>
-          <span className="font-medium">Puppies for Sale</span>
-        </div>
-
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
-          <div className="flex-1 animate-fade-in">
-            <div className="inline-flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-4 py-2 text-sm font-semibold text-green-900">
-              <BadgeCheck className="h-4 w-4 text-green-700" />
-              Healthy puppies from trusted breeders
+    <section className="bg-gradient-to-b from-emerald-50 via-white to-white pb-14 pt-12">
+      <div className="container mx-auto px-4">
+        <div className="grid items-start gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-emerald-700">
+              <Star className="h-3.5 w-3.5 fill-yellow-400 text-yellow-400" />
+              Trusted puppy placement platform
             </div>
             <h1 className="text-[36px] leading-tight font-bold text-foreground font-display mt-4 mb-4">
               Bring Home the Right Puppy With Expert Help, Fast
@@ -39,78 +29,55 @@ const HeroSection = () => {
               See verified puppies available now, get 1-on-1 guidance on WhatsApp, and choose secure nationwide delivery with our 10-year health commitment.
             </p>
 
-            <div className="mt-6 flex flex-col sm:flex-row gap-3">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-5 py-3 text-primary-foreground font-semibold shadow-sm hover:bg-primary/90 transition-colors"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 px-6 py-3.5 font-semibold text-white shadow transition hover:bg-emerald-700"
               >
                 <MessageCircle className="h-4 w-4" />
-                Chat on WhatsApp
+                Get matched on WhatsApp
               </a>
               <a
                 href="#available-puppies"
-                className="inline-flex items-center justify-center rounded-md border border-border bg-white px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
+                className="inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-6 py-3.5 font-semibold text-slate-800 transition hover:bg-slate-50"
               >
                 See Available Puppies
               </a>
             </div>
 
-            <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl">
-              <div className="flex items-center gap-2 rounded-md border border-green-100 bg-white px-3 py-2 text-sm text-foreground">
-                <ShieldCheck className="h-4 w-4 text-primary" />
-                10-year health commitment
-              </div>
-              <div className="flex items-center gap-2 rounded-md border border-green-100 bg-white px-3 py-2 text-sm text-foreground">
-                <Truck className="h-4 w-4 text-primary" />
-                Nationwide delivery
-              </div>
-              <div className="flex items-center gap-2 rounded-md border border-green-100 bg-white px-3 py-2 text-sm text-foreground">
-                <MessageCircle className="h-4 w-4 text-primary" />
-                Fast WhatsApp support
-              </div>
+            <div className="mt-7 grid gap-3 sm:grid-cols-3">
+              <div className="rounded-xl border border-emerald-100 bg-white p-3 text-sm font-medium text-slate-700"><ShieldCheck className="mr-2 inline h-4 w-4 text-emerald-600" />10-year health commitment</div>
+              <div className="rounded-xl border border-emerald-100 bg-white p-3 text-sm font-medium text-slate-700"><Truck className="mr-2 inline h-4 w-4 text-emerald-600" />Safe nationwide delivery</div>
+              <div className="rounded-xl border border-emerald-100 bg-white p-3 text-sm font-medium text-slate-700"><CheckCircle2 className="mr-2 inline h-4 w-4 text-emerald-600" />Vetted breeder network</div>
             </div>
           </div>
 
-          <div className="w-full lg:max-w-[380px] lg:flex-shrink-0 lg:mt-2 animate-slide-up">
-            <a href="https://www.puppyspot.com/reviews" className="block bg-gradient-to-br from-[#f8fdfc] to-[#f0f9f8] border border-green-100 rounded-xl p-6 w-full text-center hover:shadow-lg hover:scale-[1.02] transition-all duration-300 smooth-transition hover-lift">
-              <h3 className="font-semibold text-lg text-foreground font-display mb-2">
-                The easiest &amp; safest way to get a new puppy
-              </h3>
-              <StarRating className="my-4" />
-              <p className="font-semibold text-sm text-foreground mb-4 font-display">
-                Trusted Breeders:
-              </p>
-              <div className="flex items-start justify-center gap-10">
-                <div className="flex flex-col items-center gap-2">
-                  <div className="bg-white p-3 rounded-full shadow-sm border border-green-100">
-                    <Image
-                      src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/fcc87ae0-ed43-4816-9531-46e7e1bafe5d-puppyspot-com/assets/svgs/puppy-spot-nose-4.svg?"
-                      alt="PuppySpot Certified"
-                      width={28}
-                      height={26}
-                    />
-                  </div>
-                  <span className="text-xs font-medium text-foreground font-display">Certified</span>
+          <div className="rounded-2xl border border-emerald-100 bg-white p-6 shadow-lg">
+            <h3 className="text-lg font-bold text-slate-900">Why families choose us</h3>
+            <p className="mt-1 text-sm text-slate-600">A premium, guided buying experience similar to top national puppy marketplaces.</p>
+            <div className="mt-5 space-y-3">
+              {stats.map((item) => (
+                <div key={item.label} className="flex items-center justify-between rounded-lg bg-emerald-50 px-4 py-3">
+                  <span className="text-sm font-medium text-slate-700">{item.label}</span>
+                  <span className="text-lg font-extrabold text-emerald-700">{item.value}</span>
                 </div>
-                <div className="flex flex-col items-center gap-2">
-                  <div className="bg-white p-3 rounded-full shadow-sm border border-green-100">
-                    <Image
-                      src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/fcc87ae0-ed43-4816-9531-46e7e1bafe5d-puppyspot-com/assets/icons/logo-usda-1.png?"
-                      alt="USDA Licensed"
-                      width={28}
-                      height={26}
-                    />
-                  </div>
-                  <span className="text-xs font-medium text-foreground font-display">Licensed</span>
-                </div>
-              </div>
+              ))}
+            </div>
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800"
+            >
+              <MessageCircle className="h-4 w-4" />
+              Start your puppy consultation
             </a>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
