@@ -17,10 +17,15 @@ export default function HomePage() {
       <Header />
       <main>
         <HeroSection />
+        <section className="container mx-auto px-4">
+          <div className="mb-4 rounded-xl border border-green-100 bg-white p-4 text-center text-sm font-medium text-foreground shadow-sm">
+            <span className="text-primary">Limited availability:</span> Popular breeds are reserved quickly — chat on WhatsApp for real-time help choosing the right puppy.
+          </div>
+        </section>
         <div className="container mx-auto px-4 py-12">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
             <FilterSidebar />
-            <div className="flex-1 min-w-0">
+            <div className="flex-1 min-w-0" id="available-puppies">
               <PuppyGrid />
             </div>
           </div>

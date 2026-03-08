@@ -1,5 +1,5 @@
 import type { FC, SVGProps } from 'react';
-import { Phone, Instagram, Youtube, ShieldCheck } from 'lucide-react';
+import { MessageCircle, Instagram, Youtube, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 
 const AnchorLink = ({ href, children, className }: { href: string; children: React.ReactNode; className?: string }) => (
@@ -95,6 +95,8 @@ const PuppySpotLogo = () => (
 );
 
 const Footer = () => {
+    const whatsappUrl = 'https://wa.me/16065078887';
+
     return (
         <footer className="bg-white">
             <div className="bg-primary text-primary-foreground text-center py-3">
@@ -113,11 +115,11 @@ const Footer = () => {
                         <div className="flex flex-col sm:flex-row gap-10 lg:gap-20">
                             <div>
                                 <h3 className="font-bold text-sm text-foreground mb-2">Need guidance?</h3>
-                                <AnchorLink href="sms:13022503912" className="flex items-center gap-2 text-lg text-foreground font-semibold hover:text-primary">
-                                    <Phone className="h-5 w-5"/>
-                                    (302) 250-3912
+                                <AnchorLink href={whatsappUrl} className="flex items-center gap-2 text-lg text-foreground font-semibold hover:text-primary">
+                                    <MessageCircle className="h-5 w-5"/>
+                                    Chat on WhatsApp
                                 </AnchorLink>
-                                <p className="text-xs text-muted-foreground mt-1">Everyday 5AM-9PM PST</p>
+                                <p className="text-xs text-muted-foreground mt-1">+1 (606) 507-8887 • Everyday 5AM-9PM PST</p>
                             </div>
                             <div>
                                 <h3 className="font-bold text-sm text-foreground mb-2">Follow us</h3>
