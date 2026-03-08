@@ -1,4 +1,8 @@
 import { CheckCircle2, MessageCircle, ShieldCheck, Truck, Star } from "lucide-react";
+import React from 'react';
+import Image from 'next/image';
+import { Star, MessageCircle, ShieldCheck, Truck, BadgeCheck } from 'lucide-react';
+import { cn } from "@/lib/utils";
 import { createWhatsAppUrl, whatsappMessages } from "@/lib/whatsapp";
 
 const stats = [
@@ -26,6 +30,11 @@ const HeroSection = () => {
 
             <p className="mt-4 max-w-2xl text-lg text-slate-600">
               Browse verified puppies, compare options by lifestyle, and get personal guidance on WhatsApp from first question to safe home delivery.
+            <h1 className="text-[36px] leading-tight font-bold text-foreground font-display mt-4 mb-4">
+              Bring Home the Right Puppy With Expert Help, Fast
+            </h1>
+            <p className="max-w-3xl text-[16px] text-muted-foreground leading-relaxed font-body">
+              See verified puppies available now, get 1-on-1 guidance on WhatsApp, and choose secure nationwide delivery with our 10-year health commitment.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -43,6 +52,7 @@ const HeroSection = () => {
                 className="inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-6 py-3.5 font-semibold text-slate-800 transition hover:bg-slate-50"
               >
                 Browse available puppies
+                See Available Puppies
               </a>
             </div>
 
