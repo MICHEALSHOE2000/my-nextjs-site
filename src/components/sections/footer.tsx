@@ -1,6 +1,7 @@
 import type { FC, SVGProps } from 'react';
 import { MessageCircle, Instagram, Youtube, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
+import { createWhatsAppUrl, whatsappMessages } from '@/lib/whatsapp';
 
 const AnchorLink = ({ href, children, className }: { href: string; children: React.ReactNode; className?: string }) => (
   <a href={href} className={className}>
@@ -95,7 +96,7 @@ const PuppySpotLogo = () => (
 );
 
 const Footer = () => {
-    const whatsappUrl = 'https://wa.me/16065078887';
+    const whatsappUrl = createWhatsAppUrl(whatsappMessages.footerSupport);
 
     return (
         <footer className="bg-white">
