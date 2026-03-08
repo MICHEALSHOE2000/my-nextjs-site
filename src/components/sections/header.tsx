@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Search, Menu, X, MessageCircle } from 'lucide-react';
-import { createWhatsAppUrl, whatsappMessages } from '@/lib/whatsapp';
 
 const PuppySpotLogo = () => (
     <svg 
@@ -66,7 +65,7 @@ export default function Header() {
         <>
             <header className="bg-white sticky top-0 z-30 shadow-sm border-b border-gray-100">
                 <div className="bg-gradient-to-r from-primary to-green-600 text-white text-center py-2.5 px-4 text-sm font-medium">
-                    <a href={createWhatsAppUrl(whatsappMessages.headerBanner)} target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-green-100 transition-colors">
+                    <a href="https://wa.me/16065078887" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-green-100 transition-colors">
                         💬 Chat on WhatsApp: +1 (606) 507-8887
                     </a>
                 </div>
@@ -100,7 +99,7 @@ export default function Header() {
                                         Search
                                     </button>
                                 </form>
-                                <a href={createWhatsAppUrl(whatsappMessages.headerPrimary)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-primary text-white px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-green-600 transition-colors smooth-transition">
+                                <a href="https://wa.me/16065078887" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-primary text-white px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-green-600 transition-colors smooth-transition">
                                     <MessageCircle size={16} />
                                     Chat on WhatsApp
                                 </a>
