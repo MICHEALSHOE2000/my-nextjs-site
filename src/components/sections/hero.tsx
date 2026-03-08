@@ -32,10 +32,10 @@ const HeroSection = () => {
               Healthy puppies from trusted breeders
             </div>
             <h1 className="text-[36px] leading-tight font-bold text-foreground font-display mt-4 mb-4">
-              Find Your Perfect Puppy, Delivered Safely to Your Door
+              Bring Home the Right Puppy With Expert Help, Fast
             </h1>
             <p className="max-w-3xl text-[16px] text-muted-foreground leading-relaxed font-body">
-              Browse adorable, ready-for-love puppies with confidence. Every family gets expert guidance, secure checkout, and careful delivery options backed by our 10-year health commitment.
+              See verified puppies available now, get 1-on-1 guidance on WhatsApp, and choose secure nationwide delivery with our 10-year health commitment.
             </p>
 
             <div className="mt-6 flex flex-col sm:flex-row gap-3">
@@ -52,7 +52,7 @@ const HeroSection = () => {
                 href="#available-puppies"
                 className="inline-flex items-center justify-center rounded-md border border-border bg-white px-5 py-3 text-foreground font-semibold hover:bg-muted transition-colors"
               >
-                View Available Puppies
+                See Available Puppies
               </a>
             </div>
 
