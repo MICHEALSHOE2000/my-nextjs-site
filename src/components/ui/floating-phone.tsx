@@ -1,11 +1,17 @@
 "use client";
 
-import { Phone } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 export const FloatingPhone = () => {
+  const whatsappNumber = "16065078887";
+  const whatsappUrl = `https://wa.me/${whatsappNumber}`;
+
   return (
     <a
-      href="sms:13022503912"
+      href={whatsappUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat on WhatsApp"
       className="
         fixed top-4 right-4 z-50
         flex items-center gap-2
@@ -22,12 +28,12 @@ export const FloatingPhone = () => {
         group
       "
     >
-      <Phone className="w-3.5 h-3.5 md:w-4 md:h-4 group-hover:animate-pulse" />
+      <MessageCircle className="w-3.5 h-3.5 md:w-4 md:h-4 group-hover:animate-pulse" />
       <span className="hidden sm:inline font-semibold">
-        (302) 250-3912
+        Chat on WhatsApp
       </span>
       <span className="sm:hidden font-semibold">
-        Text Us
+        WhatsApp
       </span>
     </a>
   );
