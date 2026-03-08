@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { Star, MessageCircle, ShieldCheck, Truck, BadgeCheck } from 'lucide-react';
 import { cn } from "@/lib/utils";
+import { createWhatsAppUrl, whatsappMessages } from "@/lib/whatsapp";
 
 const StarRating = ({ rating = 5, className }: { rating?: number; className?: string }) => {
   return (
@@ -14,7 +15,7 @@ const StarRating = ({ rating = 5, className }: { rating?: number; className?: st
 };
 
 const HeroSection = () => {
-  const whatsappUrl = "https://wa.me/16065078887";
+  const whatsappUrl = createWhatsAppUrl(whatsappMessages.heroPrimary);
 
   return (
     <div className="bg-gradient-to-b from-green-50/50 to-background pt-12 pb-16">
