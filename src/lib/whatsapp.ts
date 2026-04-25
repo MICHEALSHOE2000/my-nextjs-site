@@ -1,4 +1,5 @@
-const WHATSAPP_NUMBER = "16065078887";
+export const PHONE = process.env.NEXT_PUBLIC_PHONE ?? "";
+export const PHONE_DISPLAY = PHONE || "Phone unavailable";
 
 export const whatsappMessages = {
   headerBanner:
@@ -15,6 +16,16 @@ export const whatsappMessages = {
     "Hi! I want to tell you exactly the type of dog I want:",
 } as const;
 
+const toWhatsAppNumber = (phone: string) => {
+  return phone.replace(/\D/g, "");
+};
+
 export const createWhatsAppUrl = (message: string) => {
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+  const whatsappNumber = toWhatsAppNumber(PHONE);
+
+  if (!whatsappNumber) {
+    return "#";
+  }
+
+  return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 };

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, MessageCircle, X } from "lucide-react";
-import { createWhatsAppUrl, whatsappMessages } from "@/lib/whatsapp";
+import { createWhatsAppUrl, PHONE_DISPLAY, whatsappMessages } from "@/lib/whatsapp";
 
 const navItems = [
   { label: "Available puppies", href: "#available-puppies" },
@@ -27,7 +27,7 @@ export default function Header() {
           rel="noopener noreferrer"
           className="hover:underline"
         >
-          🐶 Speak with a Puppy Advisor now on WhatsApp: +1 (606) 507-8887
+          🐶 Speak with a Puppy Advisor now on WhatsApp: {PHONE_DISPLAY}
         </a>
       </div>
 
