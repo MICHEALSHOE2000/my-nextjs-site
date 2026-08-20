@@ -1,5 +1,5 @@
-export const PHONE = "+18032905650";
-export const PHONE_DISPLAY = "+1 (803) 290-5650";
+export const PHONE = process.env.NEXT_PUBLIC_PHONE ?? "";
+export const PHONE_DISPLAY = PHONE || "Phone unavailable";
 
 export const whatsappMessages = {
   headerBanner:
