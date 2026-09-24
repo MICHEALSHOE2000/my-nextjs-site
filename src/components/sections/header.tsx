@@ -6,10 +6,10 @@ import { Menu, MessageCircle, X } from "lucide-react";
 import { createWhatsAppUrl, PHONE_DISPLAY, whatsappMessages } from "@/lib/whatsapp";
 
 const navItems = [
-  { label: "Available puppies", href: "#available-puppies" },
-  { label: "How it works", href: "#how-it-works" },
-  { label: "Why us", href: "#why-us" },
-  { label: "Reviews", href: "#reviews" },
+  { label: "Find a puppy", href: "/find-a-puppy" },
+  { label: "How it works", href: "/how-it-works" },
+  { label: "FAQs", href: "/faq" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Header() {
@@ -47,13 +47,13 @@ export default function Header() {
 
         <nav className="hidden items-center gap-7 text-sm font-semibold text-gray-700 lg:flex">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.label}
               href={item.href}
               className="transition-colors hover:text-emerald-600"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -81,14 +81,14 @@ export default function Header() {
         <div className="border-t border-emerald-100 bg-white px-4 py-4 lg:hidden">
           <nav className="space-y-2">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.label}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
                 className="block rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-emerald-50"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
 

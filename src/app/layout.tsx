@@ -5,9 +5,9 @@ import ErrorReporter from "@/components/ErrorReporter";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Find Healthy Puppies from Trusted Breeders | PuppySpot",
+  title: "Find a Puppy | PuppyHub USA",
   description:
-    "Browse available puppies, chat with our team on WhatsApp, and get safe nationwide delivery backed by a 10-year health commitment.",
+    "Ask PuppyHub USA about current puppy options, pricing and next steps. Contact the team for details before making a decision.",
 };
 
 export default function RootLayout({
